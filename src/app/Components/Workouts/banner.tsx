@@ -7,7 +7,7 @@ const BannerSection = () => {
     return (
         <div>
             <div className='container mx-auto flex justify-between items-center p-15 bg-[#15171D] mt-7 rounded-3xl border-[#9CA3AF] '>
-                <div>
+                <div className='space-y-7'>
                     <p className='text-[#C2F800]'>WORKOUT LIBRARY</p>
                     <h2 className='text-5xl'>TRAIN WITH INTENT. LOG <br />
                         EVERY SET.
