@@ -15,7 +15,7 @@ const BannerSection = () => {
                     <p className='text-[#9CA3AF]'>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it <br />
                         into today's plan, and watch the week's work add up.</p>
                     
-                    <Link href="/">
+                    <Link href="#workoutSection">
                     <button className='py-3 px-6 bg-[#C2F800] rounded-2xl text-black'>BROWSE WORKOUTS</button>
                     </Link>
                 </div>

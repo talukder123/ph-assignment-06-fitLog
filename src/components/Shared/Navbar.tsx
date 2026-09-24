@@ -30,8 +30,8 @@ const Navbar = () => {
                         </Link>
 
                         <Link
-                            href="/Components/MyPlan"
-                            className={`rounded-4xl px-4 py-2 ${pathname === "/Components/MyPlan"
+                            href="/my-plan"
+                            className={`rounded-4xl px-4 py-2 ${pathname === "/my-plan"
                                     ? "bg-[#c2f8003d] text-[#C2F800]"
                                     : "text-[#9CA3AF]"
                                 }`}

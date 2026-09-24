@@ -1,6 +1,6 @@
 import React from 'react';
-import BannerSection from './Components/Workouts/banner';
-import Workout from "./Components/Workouts/workouts";
+import BannerSection from './workouts/banner';
+import Workout from "./workouts/workouts";
 
 
 const mainPage = () => {
