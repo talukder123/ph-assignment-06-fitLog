@@ -4,16 +4,23 @@ import React, { useContext } from 'react';
 import { Bookmark } from "lucide-react";
 import { workoutsContext } from '@/Context/WorkOutContext';
 import { IWorkout } from '@/type/type.app';
+import { toast } from 'react-toastify';
 
 const SaveForLater = ({work} : {work:IWorkout}) => {
 
     const {later, setLater} = useContext(workoutsContext);
 
     const handleSaveForLater = () => {
-        setLater([...later, work]);
+    const alreadyExists = later.some((item) => item.id === work.id);
 
-    alert("You have added the workout");
+    if (alreadyExists) {
+        toast.error("This workout is already saved for later!");
+        return;
     }
+
+    setLater([...later, work]);
+    toast.success("Saved for later");
+};
 
 
     return (

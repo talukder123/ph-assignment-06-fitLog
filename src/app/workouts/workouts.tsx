@@ -14,7 +14,6 @@ const workoutsDataPromise = async () => {
 const workoutsSection = async () => {
     
     const data = await workoutsDataPromise();
-    console.log(data);
 
     return (
         <div id='workoutSection' className='container mx-auto mt-16'>
