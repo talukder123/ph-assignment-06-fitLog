@@ -131,9 +131,9 @@ const DetailWorkoutPage = async ({ params }: Idetailworkout) => {
 
                     </div>
 
-                    <div>
-                        <AddToPlan></AddToPlan>
-                        <SaveForLater></SaveForLater>
+                    <div className='flex gap-3 mt-4'>
+                        <AddToPlan work={work}></AddToPlan>
+                        <SaveForLater work={work}></SaveForLater>
                     </div>
                 </div>
             </div>
