@@ -64,7 +64,7 @@ const MyPlanPage = () => {
 
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-4 md:px-0'>
 
             <div>
                 <div className='my-6'>
@@ -75,7 +75,7 @@ const MyPlanPage = () => {
                 <div className="grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-[#0f1115] p-6">
                     <div className="flex flex-col gap-1 px-6 first:pl-0">
                         <span className="text-sm text-gray-400">Exercises</span>
-                        <span className="text-3xl font-bold text-lime-400">{activePlan.length}</span>
+                        <span className="text-xl md:text-3xl font-bold text-lime-400">{activePlan.length}</span>
                     </div>
                     <div className="flex flex-col gap-1 px-6">
                         <span className="text-sm text-gray-400">Minutes</span>
@@ -88,30 +88,32 @@ const MyPlanPage = () => {
                 </div>
 
 
-                <div className='flex justify-between items-center'>
-                    <div className="flex items-center gap-1 w-fit my-4 rounded-2xl border border-white/10 bg-[#15171c] p-1 mb-5">
+
+
+
+                <div className='flex flex-row justify-between items-center gap-2 mb-5'>
+                    <div className="flex items-center gap-1 w-fit my-4 rounded-2xl border border-white/10 bg-[#15171c] p-1">
                         <button
                             onClick={() => handleTodayClick()}
-                            className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "today"
+                            className={`px-3 md:px-5 py-2 rounded-2xl text-xs md:text-sm transition-colors ${activeTab === "today"
                                 ? "font-bold bg-[#2B303D] text-[#C2F800]"
                                 : "text-gray-400"
                                 }`}>Today&#39;s Plan</button>
                         <button
                             onClick={() => handleSavedClick()}
-                            className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "saved"
+                            className={`px-3 md:px-5 py-2 rounded-2xl text-xs md:text-sm transition-colors ${activeTab === "saved"
                                 ? "font-bold bg-[#2B303D] text-[#C2F800]"
                                 : "text-gray-400"
                                 }`}>Saved</button>
                     </div>
 
-                    <div className='flex gap-3 justify-center items-center'>
-                        <h2 className='text-[#8A92A0] text-[12px]'>SORT BY</h2>
+                    <div className='flex gap-2 md:gap-3 justify-center items-center'>
+                        <h2 className='hidden md:block text-[#8A92A0] text-[12px]'>SORT BY</h2>
                         <div className='flex gap-3 justify-center items-center'>
-
                             <select
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value)}
-                                className="select select-bordered bg-[#15171c] border-white/10 text-white"
+                                className="select select-bordered select-sm md:select-md bg-[#15171c] border-white/10 text-white"
                             >
                                 <option value="">Sort By</option>
                                 <option value="duration">Duration</option>

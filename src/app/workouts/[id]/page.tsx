@@ -19,7 +19,7 @@ const DetailWorkoutPage = async ({ params }: Idetailworkout) => {
 
     const { id } = await params
 
-    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+    const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`);
     if (!res.ok) {
         throw new Error("Failed to fetch workout");
     }
@@ -28,13 +28,12 @@ const DetailWorkoutPage = async ({ params }: Idetailworkout) => {
 
     return (
         <div className='container mx-auto'>
-            <div className='grid grid-cols-2 p-10 gap-10'>
-                <Image src={work.image} alt={work.name} height={1000} width={700} className='rounded-2xl'></Image>
+            <div className='grid grid-cols-1 md:grid-cols-2 p-4 md:p-10 gap-6 md:gap-10'>
+                <Image src={work.image} alt={work.name} height={1000} width={700} className='rounded-2xl w-full h-auto'></Image>
 
                 <div className=''>
-                    <h2 className={`${oswald.className} pb-3 text-[40px] font-bold`}>{work.name}</h2>
-                    <p className='text-[#9CA3AF] text-[20px]'>{work.description}
-                    </p>
+                    <h2 className={`${oswald.className} pb-3 text-2xl md:text-[40px] font-bold`}>{work.name}</h2>
+                    <p className='text-[#9CA3AF] text-[20px]'>{work.description}</p>
                     <div>
                         <div className="my-4 flex flex-wrap gap-3">
                             {work.muscleGroups.slice(0, 2).map((muscle) => (

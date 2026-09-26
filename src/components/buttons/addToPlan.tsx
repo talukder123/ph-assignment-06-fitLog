@@ -27,12 +27,12 @@ const AddToPlan = ({ work }: { work: IWorkout }) => {
     return (
         <div >
             <button
-    onClick={() => handleAddToPlan()}
-    className='hover:cursor-pointer flex gap-2 rounded-2xl bg-[#CCFF00] text-black font-bold px-4 py-3 hover:bg-[#b8e600] active:bg-[#a3d900] active:scale-95 transition-all duration-200'
->
-    <CalendarPlus className='text-2xl'></CalendarPlus>
-    <h2>Add to today&apos;s plan</h2>
-</button>
+                onClick={() => handleAddToPlan()}
+                className='hover:cursor-pointer flex items-center justify-center gap-2 rounded-2xl bg-[#CCFF00] text-black font-bold px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base hover:bg-[#b8e600] active:bg-[#a3d900] active:scale-95 transition-all duration-200 w-full md:w-auto'
+            >
+                <CalendarPlus className='text-xl md:text-2xl shrink-0' />
+                <h2 className='whitespace-nowrap'>Add to today&apos;s plan</h2>
+            </button>
 
         </div>
     );

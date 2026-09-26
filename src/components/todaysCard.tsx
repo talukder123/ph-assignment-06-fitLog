@@ -39,9 +39,9 @@ const TodaysCard = ({ workout }: TodaysCardProps) => {
     };
 
     return (
-        <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#15171c] p-3">
-            <div className="flex items-center gap-4">
-                <div className="relative h-16 w-24 overflow-hidden rounded-xl">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#15171c] p-3">
+            <div className="flex items-center gap-4 w-full md:w-auto">
+                <div className="relative h-14 w-20 md:h-16 md:w-24 overflow-hidden rounded-xl shrink-0">
                     <Image
                         src={workout.image}
                         alt={workout.name}
@@ -51,11 +51,11 @@ const TodaysCard = ({ workout }: TodaysCardProps) => {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                    <h3 className={`${oswald.className} text-base font-bold uppercase text-white`}>
+                    <h3 className={`${oswald.className} text-sm md:text-base font-bold uppercase text-white`}>
                         {workout.name}
                     </h3>
-                    <p className="text-sm text-[#8A92A0]">{workout.equipment}</p>
-                    <div className="flex items-center gap-4 text-sm text-[#8A92A0]">
+                    <p className="text-xs md:text-sm text-[#8A92A0]">{workout.equipment}</p>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 md:gap-4 text-xs md:text-sm text-[#8A92A0]">
                         <span className="flex items-center gap-1">
                             <Clock size={14} className="text-[#C2F800]" /> {workout.duration} min
                         </span>
@@ -69,27 +69,27 @@ const TodaysCard = ({ workout }: TodaysCardProps) => {
                 </div>
             </div>
 
-            <div className="flex items-center gap-3">
-                <Link href={`/workouts/${workout.id}`}>
-                    <button className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white">
-                        View Details
-                    </button>
-                </Link>
+            <div className="flex flex-wrap items-center gap-2 md:gap-3 w-full md:w-auto">
+    <Link href={`/workouts/${workout.id}`} className="flex-1 md:flex-none">
+        <button className="w-full md:w-auto rounded-full border border-white/20 px-3 md:px-4 py-2 text-xs md:text-sm font-semibold text-white whitespace-nowrap">
+            View Details
+        </button>
+    </Link>
 
-                <button
-                    onClick={handleMarkAsDone}
-                    className="flex items-center gap-1 rounded-full bg-[#C2F800] px-4 py-2 text-sm font-bold text-black"
-                >
-                    <Check size={16} /> Mark as Done
-                </button>
+    <button
+        onClick={handleMarkAsDone}
+        className="flex-1 md:flex-none flex items-center justify-center gap-1 rounded-full bg-[#C2F800] px-3 md:px-4 py-2 text-xs md:text-sm font-bold text-black whitespace-nowrap"
+    >
+        <Check size={16} /> Mark as Done
+    </button>
 
-                <button
-                    onClick={handleRemove}
-                    className="text-[#8A92A0] hover:text-white"
-                >
-                    <X size={18} />
-                </button>
-            </div>
+    <button
+        onClick={handleRemove}
+        className="text-[#8A92A0] hover:text-white shrink-0"
+    >
+        <X size={18} />
+    </button>
+</div>
         </div>
     );
 };

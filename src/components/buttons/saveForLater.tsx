@@ -27,10 +27,10 @@ const SaveForLater = ({ work }: { work: IWorkout }) => {
         <div className=''>
             <button
                 onClick={() => handleSaveForLater()}
-                className='flex gap-2 rounded-2xl border border-[#374151] text-white font-semibold px-4 py-3 hover:cursor-pointer hover:bg-[#374151] active:bg-[#1f2937] active:scale-95 transition-all duration-200'
+                className='flex items-center justify-center gap-2 rounded-2xl border border-[#374151] text-white font-semibold px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base hover:cursor-pointer hover:bg-[#374151] active:bg-[#1f2937] active:scale-95 transition-all duration-200 w-full md:w-auto'
             >
-                <Bookmark></Bookmark>
-                <h2>Save for later</h2>
+                <Bookmark className='shrink-0' />
+                <h2 className='whitespace-nowrap'>Save for later</h2>
             </button>
 
         </div>

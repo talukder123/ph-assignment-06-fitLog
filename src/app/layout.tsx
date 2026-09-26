@@ -29,12 +29,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-[#0C0D10] flex flex-col">
         <WorkOutContextProvide>
-          <Navbar/>
-        <div>
-          {children}
-        </div>
-        <Footer></Footer>
-         <ToastContainer />
+          <Navbar />
+          <div>
+            {children}
+          </div>
+          <Footer></Footer>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick={true}
+            pauseOnHover={true}
+            theme="dark"
+          />
         </WorkOutContextProvide>
 
       </body>
