@@ -10,8 +10,8 @@ import SavelaterCard from '@/components/savelaterCard';
 import { Oswald } from "next/font/google";
 
 const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
 });
 
 const MyPlanPage = () => {
@@ -30,8 +30,36 @@ const MyPlanPage = () => {
 
     const { todaysPlan, later } = useContext(workoutsContext);
 
-    const activePlan = activeTab === "today" ? todaysPlan : later;
+    const [sortBy, setSortBy] = useState<string>('');
 
+    const sortLabels: Record<string, string> = {
+        '': 'Sort by',
+        duration: 'Duration',
+        calories: 'Calories',
+        rating: 'Rating',
+    };
+
+    const getSortedList = (list: IWorkout[]) => {
+        if (!sortBy) return list;
+
+        const sorted = [...list];
+
+        switch (sortBy) {
+            case 'duration':
+                sorted.sort((a, b) => a.duration - b.duration);
+                break;
+            case 'calories':
+                sorted.sort((a, b) => a.caloriesBurned - b.caloriesBurned);
+                break;
+            case 'rating':
+                sorted.sort((a, b) => b.rating - a.rating);
+                break;
+        }
+
+        return sorted;
+    };
+
+    const activePlan = getSortedList(activeTab === "today" ? todaysPlan : later);
 
     const totalDuration = activePlan.reduce(
         (total: number, workout: IWorkout) => total + workout.duration,
@@ -40,6 +68,7 @@ const MyPlanPage = () => {
     const totalCalories = activePlan.reduce(
         (total: number, workout: IWorkout) => total + workout.caloriesBurned, 0
     );
+
 
     return (
         <div className='container mx-auto'>
@@ -66,19 +95,37 @@ const MyPlanPage = () => {
                 </div>
 
 
-                <div className="flex items-center gap-1 w-fit my-4 rounded-2xl border border-white/10 bg-[#15171c] p-1 mb-5">
-                    <button
-                        onClick={() => handleTodayClick()}
-                        className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "today"
-                            ? "font-bold bg-[#2B303D] text-white"
-                            : "text-gray-400"
-                            }`}>Today&#39;s Plan</button>
-                    <button
-                        onClick={() => handleSavedClick()}
-                        className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "saved"
-                            ? "font-bold bg-[#2B303D] text-white"
-                            : "text-gray-400"
-                            }`}>Saved</button>
+                <div className='flex justify-between items-center'>
+                    <div className="flex items-center gap-1 w-fit my-4 rounded-2xl border border-white/10 bg-[#15171c] p-1 mb-5">
+                        <button
+                            onClick={() => handleTodayClick()}
+                            className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "today"
+                                ? "font-bold bg-[#2B303D] text-[#C2F800]"
+                                : "text-gray-400"
+                                }`}>Today&#39;s Plan</button>
+                        <button
+                            onClick={() => handleSavedClick()}
+                            className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "saved"
+                                ? "font-bold bg-[#2B303D] text-[#C2F800]"
+                                : "text-gray-400"
+                                }`}>Saved</button>
+                    </div>
+
+                    <div className='flex gap-3 justify-center items-center'>
+                        <h2 className='text-[#8A92A0] text-[12px]'>SORT BY</h2>
+                        <div>
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn m-1 bg-[#15171c] border-white/10 text-white">
+                                    {sortLabels[sortBy]}
+                                </div>
+                                <ul tabIndex={0} className="dropdown-content menu bg-[#15171c] border border-white/10 rounded-box z-1 w-52 p-2 shadow-sm">
+                                    <li><a onClick={() => setSortBy('duration')}>Duration</a></li>
+                                    <li><a onClick={() => setSortBy('calories')}>Calories</a></li>
+                                    <li><a onClick={() => setSortBy('rating')}>Rating</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
