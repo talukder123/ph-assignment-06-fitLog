@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#1E1E1E] flex flex-col">
+      <body className="min-h-full bg-[#0C0D10] flex flex-col">
         <WorkOutContextProvide>
           <Navbar/>
         <div>

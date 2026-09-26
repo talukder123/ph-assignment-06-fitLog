@@ -7,6 +7,13 @@ import React, { useContext, useState } from 'react';
 import TodaysCard from '@/components/todaysCard';
 import SavelaterCard from '@/components/savelaterCard';
 
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 const MyPlanPage = () => {
 
     const [activeTab, setActiveTab] = useState<Tab>("today");
@@ -24,7 +31,7 @@ const MyPlanPage = () => {
     const { todaysPlan, later } = useContext(workoutsContext);
 
     const activePlan = activeTab === "today" ? todaysPlan : later;
-    
+
 
     const totalDuration = activePlan.reduce(
         (total: number, workout: IWorkout) => total + workout.duration,
@@ -39,8 +46,8 @@ const MyPlanPage = () => {
 
             <div>
                 <div className='my-6'>
-                    <h2 className='uppercase text-3xl font-bold'>My Plan</h2>
-                    <p className='text-[14px] text-[#8A92A0]'>Cap of five lifts for today. Finish them, then load more.</p>
+                    <h2 className={`${oswald.className} uppercase text-3xl font-bold`}>My Plan</h2>
+                    <p className='text-[14px] mt-2 text-[#8A92A0]'>Cap of five lifts for today. Finish them, then load more.</p>
                 </div>
 
                 <div className="grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-[#0f1115] p-6">
@@ -63,14 +70,14 @@ const MyPlanPage = () => {
                     <button
                         onClick={() => handleTodayClick()}
                         className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "today"
-                                ? "font-bold bg-[#2B303D] text-white"
-                                : "text-gray-400"
+                            ? "font-bold bg-[#2B303D] text-white"
+                            : "text-gray-400"
                             }`}>Today&#39;s Plan</button>
                     <button
                         onClick={() => handleSavedClick()}
                         className={`px-5 py-2 rounded-2xl text-sm transition-colors ${activeTab === "saved"
-                                ? "font-bold bg-[#2B303D] text-white"
-                                : "text-gray-400"
+                            ? "font-bold bg-[#2B303D] text-white"
+                            : "text-gray-400"
                             }`}>Saved</button>
                 </div>
 
@@ -80,23 +87,27 @@ const MyPlanPage = () => {
                 <section>
                     {
                         activePlan.length === 0 ?
-                        <div className='border border-gray-400 flex items-center justify-center'>
-                            <div className='p-8 flex flex-col items-center justify-center space-y-3'>
-                                <h2 className='uppercase font-bold'>Nothing here yet</h2>
-                                <p className='text-[14px] text-gray-500'>Browse the library and add a lift to get today moving.</p>
-                                <Link href="/">
-                                <button className=' font-bold rounded-4xl bg-[#C2F800] text-black py-2 px-3'>
-                                    Go to Workout
-                                </button>
-                                </Link>
+                            <div className='border border-dashed border-gray-700 rounded-2xl flex items-center justify-center py-20'>
+                                <div className='flex flex-col items-center justify-center text-center space-y-3 max-w-md'>
+                                    <h2 className={` ${oswald.className} uppercase font-bold text-white text-lg tracking-wide`}>
+                                        Nothing here yet
+                                    </h2>
+                                    <p className='text-[14px] text-gray-500'>
+                                        Browse the library and add a lift to get today moving.
+                                    </p>
+                                    <Link href="/">
+                                        <button className='mt-2 font-bold rounded-full bg-[#C2F800] text-black py-2.5 px-6 text-sm'>
+                                            Go to Workouts
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                        :
+                            :
 
-                        activeTab === "today" ? activePlan.map((workout:IWorkout) => <TodaysCard key={workout.id} workout={workout} />)
-                        : 
-                        activePlan.map((workout:IWorkout) => <SavelaterCard key={workout.id} workout={workout} />)
-                        }
+                            activeTab === "today" ? activePlan.map((workout: IWorkout) => <TodaysCard key={workout.id} workout={workout} />)
+                                :
+                                activePlan.map((workout: IWorkout) => <SavelaterCard key={workout.id} workout={workout} />)
+                    }
                 </section>
 
 

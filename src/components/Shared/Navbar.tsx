@@ -24,8 +24,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
     return (
-        <div>
-            <nav className='bg-[#0C0D10] py-4 px-4 md:px-0 relative'>
+            <nav className='bg-[#0C0D10] py-4 px-4 md:px-0 sticky top-0 z-50'>
                 <div className='flex container mx-auto justify-between items-center'>
 
                     <div className='flex justify-center items-center gap-2'>
@@ -109,7 +108,6 @@ const Navbar = () => {
                     </div>
                 )}
             </nav>
-        </div>
     );
 };
 

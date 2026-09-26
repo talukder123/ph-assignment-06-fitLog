@@ -4,6 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 interface workProps {
     work: IWorkout
 }
@@ -36,7 +43,7 @@ const WorkoutCard = ({ work }: workProps) => {
                     </div>
 
 
-                    <h2 className="mb-3 text-[20px] font-black uppercase tracking-[1px]">
+                    <h2 className={`${oswald.className} mb-3 text-[18px] font-bold uppercase tracking-[1px]`}>
                         {work.name}
                     </h2>
 
