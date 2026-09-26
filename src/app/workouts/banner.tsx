@@ -9,15 +9,15 @@ const BannerSection = () => {
             <div className='container mx-auto flex justify-between items-center p-15 bg-[#15171D] mt-7 rounded-3xl border-[#9CA3AF] '>
                 <div className='space-y-7'>
                     <p className='text-[#C2F800]'>WORKOUT LIBRARY</p>
-                    <h2 className='text-5xl'>TRAIN WITH INTENT. LOG <br />
+                    <h2 className='text-5xl font-bold'>TRAIN WITH INTENT. LOG <br />
                         EVERY SET.
                     </h2>
-                    <p className='text-[#9CA3AF]'>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it <br />
+                    <p className='text-[#9CA3AF] '>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it <br />
                         into today's plan, and watch the week's work add up.</p>
                     
-                    <Link href="#workoutSection">
-                    <button className='py-3 px-6 bg-[#C2F800] rounded-2xl text-black'>BROWSE WORKOUTS</button>
-                    </Link>
+                    <a href="#workoutSection">
+                    <button className='py-3 px-6 bg-[#C2F800] rounded-2xl text-black hover:cursor-pointer'>BROWSE WORKOUTS</button>
+                    </a>
                 </div>
                 <Image src={BannerImg} alt='banner image'></Image>
             </div>

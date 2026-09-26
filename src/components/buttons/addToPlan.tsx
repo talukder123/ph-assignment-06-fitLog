@@ -26,7 +26,7 @@ const AddToPlan = ({work} : {work:IWorkout}) => {
 
     return (
         <div >
-            <button onClick={()=> handleAddToPlan()} className='flex gap-2 rounded-2xl bg-[#CCFF00] text-black font-bold px-4 py-3'>
+            <button onClick={()=> handleAddToPlan()} className='hover:cursor-pointer flex gap-2 rounded-2xl bg-[#CCFF00] text-black font-bold px-4 py-3'>
                 <CalendarPlus  className='text-2xl'></CalendarPlus >
                 <h2>Add to today&apos;s plan</h2>
             </button>

@@ -25,7 +25,7 @@ const SaveForLater = ({work} : {work:IWorkout}) => {
 
     return (
         <div className=''>
-            <button onClick={()=> handleSaveForLater()} className='flex gap-2 rounded-2xl bg-[#CCFF00] text-black font-bold px-4 py-3'>
+            <button onClick={()=> handleSaveForLater()} className='flex gap-2 rounded-2xl border border-[#374151] text-white font-semibold px-4 py-3 hover:cursor-pointer'>
                 <Bookmark></Bookmark>
                 <h2>Save for later</h2>
             </button>

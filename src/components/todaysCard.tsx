@@ -5,7 +5,7 @@ import { IWorkout } from '@/type/type.app';
 import { Check, Clock, Flame, Star, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 interface TodaysCardProps {
     workout: IWorkout;
@@ -21,8 +21,9 @@ const TodaysCard = ({workout}:TodaysCardProps) => {
         );
     };
 
+    const [isDone, setIsDone] = useState(false);
     const handleMarkAsDone = () => {
-        // done logic - context e jodi "completed" field/flag thake, oita update korben
+        setIsDone((prev) => !prev);
     };
 
     return (
@@ -64,10 +65,10 @@ const TodaysCard = ({workout}:TodaysCardProps) => {
                 </Link>
 
                 <button
-                    onClick={handleMarkAsDone}
+                    onClick={()=> handleMarkAsDone()}
                     className="flex items-center gap-1 rounded-full bg-[#C2F800] px-4 py-2 text-sm font-bold text-black"
                 >
-                    <Check size={16} /> Mark as Done
+                    <Check size={16} /> {isDone ? 'Done' : 'Mark as Done'}
                 </button>
 
                 <button
