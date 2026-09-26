@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '@/assets/logo.png'
 import Image from 'next/image';
 
-import { Oswald, Inter } from "next/font/google";
+import { Oswald } from "next/font/google";
 
 const oswald = Oswald({
   subsets: ["latin"],
