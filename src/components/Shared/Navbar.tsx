@@ -56,7 +56,7 @@ const Navbar = () => {
 
                     <div className='hidden md:flex justify-center items-center gap-5'>
                         <Link href="/my-plan">
-                            <button className="flex items-center gap-2 font-semibold hover:bg-gray-100 cursor-pointer transition-colors">
+                            <button className="flex items-center gap-2 font-semibold hover:cursor-pointer">
                                 Plan
                                 <span className="rounded-full px-3 bg-[#C2F800] py-1 text-sm font-bold text-black">
                                     {todaysPlan.length}
@@ -65,7 +65,7 @@ const Navbar = () => {
                         </Link>
 
                         <Link href="/my-plan">
-                            <button className="flex items-center gap-2 text-gray-400 font-semibold hover:bg-gray-100 hover:text-gray-600 cursor-pointer transition-colors">
+                            <button className="flex items-center gap-2 text-gray-400 font-semibold hover:cursor-pointer">
                                 Saved
                                 <span className="rounded-full px-3 border-2 border-gray-400 bg-black py-1 text-sm font-bold text-white">
                                     {later.length}
