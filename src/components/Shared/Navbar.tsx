@@ -29,7 +29,7 @@ const Navbar = () => {
 
                     <div className='flex justify-center items-center gap-2'>
                         <Image src={logo} alt='logo'></Image>
-                        <h2 className={`${oswald.className} text-2xl font-semibold`}>FITLOG</h2>
+                        <h2 className={`${oswald.className} text-2xl text-white font-semibold`}>FITLOG</h2>
                     </div>
 
                     <div className="hidden md:flex items-center justify-center gap-3">

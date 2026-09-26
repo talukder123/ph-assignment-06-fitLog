@@ -21,7 +21,7 @@ const BannerSection = () => {
             <div className='container mx-auto flex flex-col justify-between items-center p-6 bg-[#15171D] mt-7 rounded-3xl md:flex-row md:p-15 md:items-start'>
                 <div className='space-y-7'>
                     <p className={`${inter.className} text-[#C2F800] text-[11px]`}>WORKOUT LIBRARY</p>
-                    <h2 className={`${oswald.className} text-5xl font-bold`}>TRAIN WITH INTENT. LOG <br />
+                    <h2 className={`${oswald.className} text-5xl text-white font-bold`}>TRAIN WITH INTENT. LOG <br />
                         EVERY SET.
                     </h2>
                     <p className='text-[#9CA3AF] '>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it <br />
