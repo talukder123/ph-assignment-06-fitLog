@@ -68,7 +68,7 @@ const MyPlanPage = () => {
 
             <div>
                 <div className='my-6'>
-                    <h2 className={`${oswald.className} uppercase text-3xl font-bold`}>My Plan</h2>
+                    <h2 className={`${oswald.className} uppercase text-white text-3xl font-bold`}>My Plan</h2>
                     <p className='text-[14px] mt-2 text-[#8A92A0]'>Cap of five lifts for today. Finish them, then load more.</p>
                 </div>
 
