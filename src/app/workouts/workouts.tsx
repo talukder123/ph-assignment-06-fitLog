@@ -18,7 +18,7 @@ const workoutsSection = async () => {
     return (
         <div id='workoutSection' className='container mx-auto mt-10 px-4 sm:mt-12 md:mt-16'>
             <div className='mb-4'>
-                <h2 className='uppercase text-[30px] font-bold'>THE LIBRARY</h2>
+                <h2 className='uppercase text-[30px] text-white font-bold'>THE LIBRARY</h2>
                 <p className='text-[14px] text-[#9CA3AF]'>Twelve lifts covering every major muscle group.</p>
             </div>
 
