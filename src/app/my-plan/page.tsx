@@ -32,13 +32,6 @@ const MyPlanPage = () => {
 
     const [sortBy, setSortBy] = useState<string>('');
 
-    const sortLabels: Record<string, string> = {
-        '': 'Sort by',
-        duration: 'Duration',
-        calories: 'Calories',
-        rating: 'Rating',
-    };
-
     const getSortedList = (list: IWorkout[]) => {
         if (!sortBy) return list;
 
@@ -113,17 +106,18 @@ const MyPlanPage = () => {
 
                     <div className='flex gap-3 justify-center items-center'>
                         <h2 className='text-[#8A92A0] text-[12px]'>SORT BY</h2>
-                        <div>
-                            <div className="dropdown dropdown-end">
-                                <div tabIndex={0} role="button" className="btn m-1 bg-[#15171c] border-white/10 text-white">
-                                    {sortLabels[sortBy]}
-                                </div>
-                                <ul tabIndex={0} className="dropdown-content menu bg-[#15171c] border border-white/10 rounded-box z-1 w-52 p-2 shadow-sm">
-                                    <li><a onClick={() => setSortBy('duration')}>Duration</a></li>
-                                    <li><a onClick={() => setSortBy('calories')}>Calories</a></li>
-                                    <li><a onClick={() => setSortBy('rating')}>Rating</a></li>
-                                </ul>
-                            </div>
+                        <div className='flex gap-3 justify-center items-center'>
+
+                            <select
+                                value={sortBy}
+                                onChange={(e) => setSortBy(e.target.value)}
+                                className="select select-bordered bg-[#15171c] border-white/10 text-white"
+                            >
+                                <option value="">Sort By</option>
+                                <option value="duration">Duration</option>
+                                <option value="calories">Calories</option>
+                                <option value="rating">Rating</option>
+                            </select>
                         </div>
                     </div>
                 </div>
