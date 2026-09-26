@@ -11,7 +11,7 @@ const SaveForLater = ({ work }: { work: IWorkout }) => {
     const { later, setLater } = useContext(workoutsContext);
 
     const handleSaveForLater = () => {
-        const alreadyExists = later.some((item) => item.id === work.id);
+        const alreadyExists = later.some((item:IWorkout) => item.id === work.id);
 
         if (alreadyExists) {
             toast.error("This workout is already saved for later!");
