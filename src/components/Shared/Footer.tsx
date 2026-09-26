@@ -4,12 +4,15 @@ import Image from 'next/image';
 
 const Footer = () => {
     return (
-        <div className='container mx-auto flex justify-between items-center py-6 mt-15 border-t border-gray-800 p-4'>
-            <div className='flex gap-3 justify-between items-center'>
-                <Image src={logo} alt='footer logo'></Image>
-                <h2 className='font-bold'>FITLOG</h2>
+        <div className="container mx-auto mt-10 flex flex-col items-center justify-between gap-4 border-t border-gray-800 p-4 py-6 text-center sm:flex-row sm:text-left md:mt-15">
+            <div className="flex items-center justify-between gap-3">
+                <Image src={logo} alt="footer logo" />
+                <h2 className="font-bold">FITLOG</h2>
             </div>
-            <p className='text-[#6B7280] text-[14px]'>© 2026 FitLog — Workout Library. Train hard, log honest.</p>
+
+            <p className="text-[14px] text-[#6B7280]">
+                © 2026 FitLog — Workout Library. Train hard, log honest.
+            </p>
         </div>
     );
 };

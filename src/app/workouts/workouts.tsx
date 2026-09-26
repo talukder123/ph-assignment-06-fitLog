@@ -16,13 +16,13 @@ const workoutsSection = async () => {
     const data = await workoutsDataPromise();
 
     return (
-        <div id='workoutSection' className='container mx-auto mt-16'>
+        <div id='workoutSection' className='container mx-auto mt-10 px-4 sm:mt-12 md:mt-16'>
             <div className='mb-4'>
                 <h2 className='uppercase text-[30px] font-bold'>THE LIBRARY</h2>
                 <p className='text-[14px] text-[#9CA3AF]'>Twelve lifts covering every major muscle group.</p>
             </div>
 
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
                 {
                     data.map((work : IWorkout) => {
                         return (
